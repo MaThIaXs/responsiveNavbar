@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+
+    <title>Responsive Navbar</title>
+</head>
+<body>
+    <header>
+        <span>Logo</span>
+
+        <nav>
+            <div class="nav-list">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">Projects</a></li>
+                    <li><a href="#">About us</a></li>
+                    <a href="#"><button>Contact</button></a>
+                </ul>
+            </div>
+            
+            
+            <div class="menu">
+                <ion-icon name="menu" onclick="menuShow(this)"></ion-icon>
+            </div>
+        </nav>
+
+        <div class="mobile-nav-list">
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Projects</a></li>
+                <li><a href="#">About us</a></li>
+                <a href="#"><button>Contact</button></a>
+            </ul>
+        </div>
+    </header>
+
+    <script>
+        function menuShow(e) {
+            let menuMobile = document.querySelector('.mobile-nav-list');
+            
+            e.name === 'menu' ? e.name = "close" : e.name = "menu";
+
+            if (menuMobile.classList.contains('open')) {
+                menuMobile.classList.remove('open');
+            } else {
+                menuMobile.classList.add('open');
+            }
+        }
+    </script>
+</body>
+</html>

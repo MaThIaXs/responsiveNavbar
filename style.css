@@ -1,0 +1,143 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background-color: grey;
+}
+
+header {  
+    background-color: #221C35;
+    align-items: center;
+    padding: 10px 10%;
+    display: flex;
+    justify-content: space-between;
+}
+
+span, a {
+    color: #FAF9F6;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+span {
+    font-size: 25pt;
+}
+
+li {
+    font-size: 15pt;
+    margin: 0 1.5rem;
+}
+
+.nav-list {
+    position: static;
+}
+
+li a {
+    position: relative;
+}
+
+li a:before {
+    content: "";
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    transform: scaleX(0);
+    transform-origin: bottom left;
+    transition: transform 0.15s ease-out;
+    background-color: #FAF9F6;
+}
+
+li a:hover:before {
+    transform: scaleX(1);   
+}
+
+button {
+    background-color: #F7F6F2;
+    border: none;
+    height: 35px;
+    width: 100px;
+    border-radius: 10px;
+    font-size: 12pt;
+}
+
+button:hover {
+    cursor: pointer;
+    background-color: #fff;
+    transform: translateY(-0.1em);
+}
+
+button:active {
+    background-color: #F7F6F2;
+    transform: translateY(0);
+}
+
+@media (min-width: 740px) {
+    .menu {
+        display: none;
+    }
+
+    .mobile-nav-list {
+        display: none;
+    }
+
+    .nav-list, ul {
+        display: flex;
+        list-style: none;
+        align-items: center;
+    }
+
+    button {
+        margin-left: 1.5rem;
+    }
+}
+
+@media (max-width: 740px) {
+    li {
+        margin: 1rem 0;
+    }
+
+    button {
+        margin-top: 0.5rem;
+    }
+
+    .mobile-nav-list ul {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .nav-list {
+        display: none;
+    }
+    
+    .mobile-nav-list {
+        display: none;
+        background-color: #221C35;
+        position: absolute;
+        margin-top: 18rem;
+        width: 100%;
+        left: 0;
+        padding: 1rem 0;
+    }
+
+    .menu {
+        display: flex;
+        align-items: center;
+        cursor: pointer;
+        font-size: 2.5rem;
+        color: #F7F6F2;
+    }
+
+    .open {
+        display: block;
+    }
+}
